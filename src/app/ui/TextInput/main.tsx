@@ -9,18 +9,17 @@ export default function TextInput({
   ...props
 }: TextInputProps) {
   return (
-    <div>
+    <div {...className && { className }}>
       <input
         className={`border rounded-sm
         text-sm h-[36px] overflow-hidden outline-none
         focus:outline-none px-[9px] py-[8px] leading-[14px]
         w-full bg-secondary
-        ${error ? 'border-error-500' : 'border-stroke'}
-        ${className}
+        ${error ? 'border-red-500 text-red-500' : 'border-stroke'}
         `}
         {...props}
       />
-      {error && (<span className="text-error-500">{error}</span>)}
+      {error && (<span className="text-red-500 m-0 text-xs">{error}</span>)}
     </div>
   )
 }
